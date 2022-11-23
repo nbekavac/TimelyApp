@@ -6,4 +6,4 @@ Technologies used:
  C#, ASP.NET CORE, Entity Framework, SQL Server, Angular
  <br>
  
- If necessary, configure ConnectionString in appsetting.json in TimelyAPI.sln with your database connection and run the migration(```ruby dotnet ef migrations add Initial ```)
+ If necessary, configure ConnectionString in appsetting.json in TimelyAPI.sln with your database connection and run the migration(``` dotnet ef migrations add Initial ```)
