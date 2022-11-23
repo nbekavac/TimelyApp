@@ -1,0 +1,18 @@
+
+<h1>Timely</h1>
+
+
+<div id="mainDiv">
+<button *ngIf="this.isButtonVisible" (click)="startButtonClicked()">Start</button>
+
+
+  <app-show-project *ngIf="showShowComponent">
+    [project]="projectToEdit" 
+    (projectsUpdated)="updateProjectList($event)">
+  </app-show-project>
+
+  <app-edit-project 
+    [project]="projectToEdit" 
+    (projectsUpdated)="updateProjectList($event)">
+  </app-edit-project>
+</div>

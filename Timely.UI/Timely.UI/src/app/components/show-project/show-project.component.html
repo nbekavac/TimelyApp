@@ -1,0 +1,84 @@
+<style>
+    table, th, td {
+      border:1px solid black;
+    }
+    th{
+        background-color: gray;
+    }
+    
+</style>
+
+<div *ngIf="this.isDivVisible">
+    <button (click)="stopClicked()">Stop</button>
+
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Start</th>
+            <th>Stop</th>
+            <th>Duration(minutes)</th>
+        </thead>
+        <tbody>
+            <td>...</td>
+            <td>{{startDate | date:'yyyy-MM-dd hh:mm'}}</td>
+            <td>...</td>
+            <td>...</td>
+            
+        </tbody>
+    </table>
+
+</div>
+
+
+
+<div *ngIf="!this.isModalVisible">
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Stop timer</h2>
+          </div>
+          <div class="modal-body">
+            <p>Project name</p>
+            <input name="projectName"  #box (keyup)="getValue(box.value)" type="text">
+          </div>
+          <div class="modal-footer">
+            <br>
+            <button (click)="stopTimerClicked()">Stop Timer</button>
+          </div>
+        </div>
+        
+      </div>
+    
+</div>
+
+
+<div *ngIf="this.areProjectsVisible">
+    <button (click)="startClicked()">Start</button>
+
+    <table>
+        <thead>
+            <th>Name</th>
+            <th>Start</th>
+            <th>Stop</th>
+            <th>Duration(minutes)</th>
+            <th>Edit</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let project of projects">
+            <td>{{ project.name }}</td>
+            <td>{{ project.start }}</td>
+            <td>{{ project.stop }}</td>
+            <td>{{ project.duration }}</td>
+            <td><button (click)="editProject(project)">Edit</button></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <app-edit-project 
+    [project]="projectToEdit" 
+    (projectsUpdated)="updateProjectList($event)">
+    </app-edit-project>
+</div>
+

@@ -1,0 +1,22 @@
+<div *ngIf="project">
+    <h2>{{project.name}}</h2>
+    <div>
+        Name: 
+        <input [(ngModel)]="project.name" placeholder="Name"/>
+    </div>
+    <div>
+        Start: 
+        <input [(ngModel)]="project.start" placeholder="Start"/>
+    </div>
+    <div>
+        Stop: 
+        <input [(ngModel)]="project.stop" placeholder="Stop"/>
+    </div>
+    <div>
+        Duration(minutes): 
+        <input [(ngModel)]="project.duration" placeholder="Duration"/>
+    </div>
+    <button (click)="updateProject(project)" *ngIf="project.id">Save</button>
+    <button (click)="deleteProject(project)" *ngIf="project.id">Delete</button>
+    <button (click)="createProject(project)" *ngIf="!project.id">Create</button>
+</div>
