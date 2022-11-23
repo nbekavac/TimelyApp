@@ -6,4 +6,4 @@ Technologies used:
  C#, ASP.NET CORE, Entity Framework, SQL Server, Angular
  <br>
  
- If necessary, configure ConnectionString in appsetting.json in TimelyAPI with your own database connection. 
+ If necessary, configure ConnectionString in appsetting.json in TimelyAPI.sln with your database connection.
